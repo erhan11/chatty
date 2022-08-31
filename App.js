@@ -1,7 +1,7 @@
-import react from "react";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "react-navigation-stack";
+import { createStackNavigator } from "@react-navigation/stack";
+
 import { SafeAreaView, Text } from "react-native";
 
 const Home = () => {
@@ -20,8 +20,17 @@ const Settings = () => {
   );
 };
 
+const MainStack = createStackNavigator();
+
 const App = () => {
-  return <NavigationContainer></NavigationContainer>;
+  return (
+    <NavigationContainer>
+      <MainStack.Navigator>
+        <MainStack.Screen name="Home" component={Home} />
+        <MainStack.Screen name="Settings" component={Settings} />
+      </MainStack.Navigator>
+    </NavigationContainer>
+  );
 };
 
 export default App;
