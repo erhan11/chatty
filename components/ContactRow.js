@@ -1,10 +1,11 @@
 import React from "react";
 import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { colors } from "../config/constants";
 
-const ContactRow = ({ name, subtitle, onPress }) => {
+const ContactRow = ({ name, subtitle, onPress, style }) => {
   return (
-    <TouchableOpacity style={styles.row} onPress={onPress}>
+    <TouchableOpacity style={[styles.row, style]} onPress={onPress}>
       <View style={styles.avatar}>
         <Text style={styles.avatarLabel}>
           {name
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
   avatar: {
     width: 56,
     height: 56,
-    backgroundColor: "#1e88e5",
+    backgroundColor: colors.primary,
     borderRadius: 28,
     alignItems: "center",
     justifyContent: "center",
