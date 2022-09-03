@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import Cell from "../components/Cell";
 import ContactRow from "../components/ContactRow";
 import Seperator from "../components/Seperator";
 import { colors } from "../config/constants";
-import Cell from "../components/Cell";
 
 const Settings = () => {
   return (
@@ -16,10 +16,34 @@ const Settings = () => {
       <Seperator />
       <Cell
         title="Logout"
-        icon="chevron-forward-outline"
+        icon="log-out-outline"
         tintColor={colors.red}
         onPress={() => {
-          alert("dont touch again");
+          console.log("touched logout");
+          console.error("suff broke loose");
+          console.warn({ haha: "lol" });
+        }}
+      />
+      <Seperator />
+      <Cell
+        title="Tell a Friend"
+        icon="help-circle-outline"
+        tintColor={colors.pink}
+        onPress={() => {
+          console.log("touched logout");
+          console.error("suff broke loose");
+          console.warn({ haha: "lol" });
+        }}
+      />
+      <Seperator />
+      <Cell
+        title="info"
+        icon="information-outline"
+        tintColor={colors.red}
+        onPress={() => {
+          console.log("touched logout");
+          console.error("suff broke loose");
+          console.warn({ haha: "lol" });
         }}
       />
     </View>

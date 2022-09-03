@@ -1,5 +1,5 @@
 import React from "react";
-import { View, SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native";
 import ContactRow from "../components/ContactRow";
 import Seperator from "../components/Seperator";
 

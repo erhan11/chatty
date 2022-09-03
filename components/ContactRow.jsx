@@ -2,6 +2,7 @@ import React from "react";
 import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../config/constants";
+import PropTypes from "prop-types";
 
 const ContactRow = ({ name, subtitle, onPress, style }) => {
   return (
@@ -21,6 +22,15 @@ const ContactRow = ({ name, subtitle, onPress, style }) => {
     </TouchableOpacity>
   );
 };
+
+const { string, func } = PropTypes;
+ContactRow.propTypes = {
+  name: string,
+  onPress: func,
+  subtitle: string,
+  style: string,
+};
+
 const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
