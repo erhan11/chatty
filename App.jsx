@@ -6,6 +6,7 @@ import Chats from "./screens/Chats";
 import Settings from "./screens/Settings";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "./config/constants";
+import SignUp from "./screens/SignUp";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -28,12 +29,14 @@ const TabsScreen = () => (
       tabBarActiveTintColor: colors.primary,
     })}
   >
-    <Screen name="Chats" component={Chats} />
+    <Screen
+      name="Chats"
+      initialParams={{ isLoggedIn: false }}
+      component={Chats}
+    />
     <Screen name="Settings" component={Settings} />
   </Navigator>
 );
-
-const MainStack = createStackNavigator();
 
 const SettingsStack = createStackNavigator();
 
@@ -46,14 +49,24 @@ const SettingsScreen = () => {
 };
 
 const ChatScreen = () => {
-  return <ChatStack.Screen name="Chats" component={Chats} />;
+  return (
+    <ChatsStack.Navigator>
+      <ChatStack.Screen name="Chats" component={Chats} />
+    </ChatsStack.Navigator>
+  );
 };
+
+const MainStack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <MainStack.Navigator>
+      <MainStack.Navigator
+        headerShown={false}
+        screenOptions={{ presentation: "modal" }}
+      >
         <MainStack.Screen name="Tabs" component={TabsScreen} />
+        <MainStack.Screen name="SignUp" component={SignUp} />
       </MainStack.Navigator>
     </NavigationContainer>
   );

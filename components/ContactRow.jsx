@@ -23,12 +23,12 @@ const ContactRow = ({ name, subtitle, onPress, style }) => {
   );
 };
 
-const { string, func } = PropTypes;
+const { string, func, object } = PropTypes;
 ContactRow.propTypes = {
   name: string,
   onPress: func,
   subtitle: string,
-  style: string,
+  style: object,
 };
 
 const styles = StyleSheet.create({

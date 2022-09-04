@@ -27,7 +27,7 @@ const Settings = () => {
       <Seperator />
       <Cell
         title="Tell a Friend"
-        icon="help-circle-outline"
+        icon="heart-outline"
         tintColor={colors.pink}
         onPress={() => {
           console.log("touched logout");
